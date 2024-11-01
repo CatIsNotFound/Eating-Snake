@@ -13,8 +13,8 @@ using namespace std;
 
 // 全局区
 bool is_paused;
-bool is_dead;
-bool is_running;
+bool is_dead = true;
+bool is_running = false;
 bool refresh_once = false;
 struct Map map;
 struct Snake p_snake;
@@ -47,7 +47,7 @@ void sleep(int ms) {
 
 void init_game(int map_height, int map_width) {
     show_first_screen();
-    getchar();
+    wait_key();
     cout << "  -> Starting Game...";
     is_running = true;
     sleep(1000);
@@ -84,7 +84,7 @@ void quit_game() {
     sleep(100);
     is_running = false;
     clear_screen();
-    cout << "Quitting Game....";
+    cout << " Quitting Game....";
     sleep(1000);
     destroy();
     exit(0);
@@ -228,7 +228,7 @@ void reset_game(Snake &snake) {
         is_paused = true;
         sleep(100);
         clear_screen();
-        cout << "Restarting the game...";
+        cout << " Restarting the game...";
         sleep(1000);
         clear_blocks();
         sleep(1000);

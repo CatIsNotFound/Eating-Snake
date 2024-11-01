@@ -1,7 +1,7 @@
-#define HIDE_CURSOR "\033[?25l"
-#define SHOW_CURSOR "\033[?25h"
-#define CLEAR_SCR "\033[2J"
-#define MOVE_TO_LEFT_TOP "\033[2;2H"
+#define HIDE_CURSOR "echo \x1B[?25l"
+#define SHOW_CURSOR "echo \x1B[?25h"
+#define CLEAR_SCR "cls"
+#define MOVE_TO_LEFT_TOP "echo \x1B[2;2H"
 
 #ifndef EATINGSNAKE_GRAPHIC_H
 #define EATINGSNAKE_GRAPHIC_H

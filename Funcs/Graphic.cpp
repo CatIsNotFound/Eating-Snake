@@ -14,16 +14,16 @@ void create_Map(const Map &map) {
         move_Cursor(i + 2, 2);
         for (int j = 0; j < W; ++j) {
             if (i == 0 && j == 0) {
-                cout << "┌" ;
+                cout << "+" ;
             }
             else if (i == 0 && j == W - 1) {
-                cout << "┐" ;
+                cout << "+" ;
             }
             else if (i == H - 1 && j == 0) {
-                cout << "└" ;
+                cout << "+" ;
             }
             else if (i == H - 1 && j == W - 1) {
-                cout << "┘" ;
+                cout << "+" ;
             }
             else if (!i || i == H - 1) {
                 cout << "-" ;
@@ -40,16 +40,16 @@ void create_Map(const Map &map) {
 
 // 清屏
 void clear_screen() {
-    cout << HIDE_CURSOR;
-    cout << CLEAR_SCR;
-    cout << MOVE_TO_LEFT_TOP;
+    system(CLEAR_SCR);
+    system(HIDE_CURSOR);
+    system(MOVE_TO_LEFT_TOP);
 }
 
 // 退出前执行销毁
 void destroy() {
-    cout << SHOW_CURSOR;
-    cout << CLEAR_SCR;
-    cout << MOVE_TO_LEFT_TOP;
+    system(CLEAR_SCR);
+    system(HIDE_CURSOR);
+    system(MOVE_TO_LEFT_TOP);
 }
 
 // 刷新画面
@@ -99,7 +99,7 @@ void show_hearts(const Snake &snake) {
     move_Cursor(1, 3);
     cout << "       ";
     move_Cursor(1, 3);
-    cout << "H: " << snake.lives << " E: " << snake.length << "/" << snake.max_length;
+    cout << "H: " << snake.lives << " E: " << snake.length << "/" << snake.max_length << "    ";
 }
 
 
